@@ -7,8 +7,10 @@ from typing import Any
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
+# ✅ ALWAYS use backend.*
 from backend.database.mongo import get_store
 from backend.routers.analyze import router as analyze_router
+from backend.routers.analytics import router as analytics_router
 
 
 # ===============================
@@ -49,7 +51,7 @@ async def lifespan(app: FastAPI):
     app.state.store = get_store()
     app.state.hub = WebSocketHub()
 
-    yield  # 🔴 IMPORTANT: keeps app alive
+    yield
 
     print("🛑 Shutting down VERITAS X backend...")
 
@@ -71,8 +73,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Routes
+
+# ===============================
+# 📡 ROUTES
+# ===============================
 app.include_router(analyze_router, prefix="/api", tags=["analysis"])
+app.include_router(analytics_router, prefix="/api", tags=["analytics"])
 
 
 # ===============================
@@ -99,11 +105,13 @@ async def websocket_endpoint(websocket: WebSocket):
     await hub.connect(websocket)
 
     try:
+        # send initial stats
         await websocket.send_json({
             "type": "stats",
             "stats": store.get_stats()
         })
 
+        # send recent detections
         await websocket.send_json({
             "type": "recent",
             "detections": store.get_recent(limit=20)
