@@ -211,6 +211,23 @@ npm run dev
 
 ---
 
+## 🔐 Authentication Note
+
+This project currently uses a simplified login system without full authentication.
+
+The focus of this prototype is on:
+- AI-powered scam detection
+- Real-time analysis and visualization
+- System architecture and user experience
+
+For a production-ready system, the following would be implemented:
+- Secure authentication (JWT / OAuth)
+- Role-based access control
+- Encrypted user sessions
+- API security and rate limiting
+
+👉 This design choice was intentional to prioritize core functionality within hackathon constraints.
+
 ## 🚀 Future Improvements
 
 * Cloud deployment of AI backend
@@ -218,12 +235,12 @@ npm run dev
 * Real-time browser extension alerts
 * Multi-language scam detection
 * User authentication & profiles
-
+- Full authentication system with JWT and role-based access
 ---
 
 ## 👩‍💻 Author
 
-**Kumari Sonali Upadhyay**
+**Kumari Sonali **
 CSE Student | AI & Security Enthusiast
 
 ---
