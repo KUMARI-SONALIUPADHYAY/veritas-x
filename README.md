@@ -1,160 +1,186 @@
-# 🚀 VERITAS-X — AI-Powered Scam Detection Platform
+# 🚀 VERITAS X — AI-Powered Scam Detection Platform
 
-## 🔥 Overview
+**Detect scams. Verify truth. Instantly.**
 
-VERITAS-X is an **AI-native threat intelligence platform** designed to detect scams across **URLs, text, images, and videos** in real-time.
-
-It combines:
-
-* 🧠 AI reasoning
-* 🌐 Web/domain analysis
-* 📊 Real-time dashboards
-* 🧩 Browser extension protection
-
-to provide a **complete scam detection ecosystem**.
+VERITAS X is an AI-powered platform that analyzes URLs, text, images, and videos to detect phishing, fraud, and malicious content in real time. It combines intelligent risk scoring, explainable AI reasoning, and a modern analytics dashboard to provide actionable security insights.
 
 ---
 
-## 🎯 Problem Statement
+## 🌐 Live Demo
 
-Online scams (OTP fraud, phishing, fake URLs, etc.) are increasing rapidly.
+👉 [Frontend (Vercel)] (https://veritas-x.vercel.app)
+👉 Backend API Docs: http://127.0.0.1:8000/docs
 
-Existing solutions:
-
-* Detect only specific types
-* Lack real-time intelligence
-* No unified dashboard
-
-👉 VERITAS-X solves this by combining **AI + analytics + real-time monitoring**
+> ⚠️ Note: Backend runs locally due to AI model constraints. The deployed frontend operates in demo mode.
 
 ---
 
-## ⚡ Key Features
+## ✨ Key Features
 
-### 🔍 Multi-Modal Scam Detection
+* 🔍 **Multi-Modal Analysis**
+  Analyze URLs, text, images, and video inputs for fraud detection
 
-* URL analysis
-* Text scam detection (OTP, phishing patterns)
-* Image & video scanning
-* Domain verification
+* 🧠 **AI Reasoning Engine**
+  Context-aware detection using pattern recognition and heuristic scoring
 
----
+* ⚡ **Real-Time Risk Scoring**
+  Instant classification: Safe / Suspicious / Danger
 
-### 📊 Real-Time Analytics Dashboard
+* 📊 **Analytics Dashboard**
+  Visual insights, trends, and threat intelligence overview
 
-* Total scans, safe, danger metrics
-* Live detection feed
-* Scam type distribution (pie + bar charts)
-* Risk activity trends
+* 🌐 **WebSocket Live Updates**
+  Real-time detection streaming to dashboard
 
----
+* 🧩 **Browser Extension Support**
+  Enables real-time scanning directly from user activity
 
-### 🧠 AI Reasoning Engine
-
-* Uses **Ollama (LLM-based reasoning)**
-* Detects scam patterns intelligently
-* Provides explanation: *"Why flagged?"*
+* 📁 **Export Reports**
+  Download analysis results as PDF or JSON
 
 ---
 
-### 🌐 Domain Intelligence
+## 🧱 Tech Stack
 
-* Extracts domain from URL
-* Highlights suspicious domains
-* Detects fake vs real patterns
+### Frontend
 
----
-
-### 🔗 Export & Sharing
-
-* 📄 Download PDF report
-* 📦 Export JSON report
-* 🔗 Share analysis link
-
----
-
-### 🧩 Browser Extension
-
-* Real-time scam detection while browsing
-* Popup risk alerts
-* Background monitoring
-
----
-
-## 🏗️ Tech Stack
-
-### 💻 Frontend
-
-* React (Vite)
+* React.js (Vite)
 * Tailwind CSS
-* Recharts (charts)
-* Context API (state management)
+* Chart.js / Recharts
+* Axios
+
+### Backend
+
+* FastAPI
+* Python 3.13
+* WebSockets
+* Uvicorn
+
+### AI / Detection Engine
+
+* Custom heuristic models
+* Pattern-based NLP detection
+* Image analysis pipeline
+* Ollama (local LLM integration)
+
+### Database
+
+* MongoDB (for storing detections & analytics)
 
 ---
 
-### ⚙️ Backend
-
-* FastAPI (Python)
-* MongoDB (data storage)
-* REST APIs
-
----
-
-### 🧠 AI Layer
-
-* Ollama (LLM integration)
-* Custom reasoning engine
-* Pattern detection system
-
----
-
-### 🧩 Extension
-
-* JavaScript
-* Chrome Extension APIs
-* Content scripts + background scripts
-
----
-
-## 📂 Project Structure
+## 🏗️ Project Structure
 
 ```
 veritas-x/
 │
-├── backend/
-│   ├── main.py
+├── frontend/        # React frontend (Vite)
+├── backend/         # FastAPI backend
 │   ├── routers/
 │   ├── services/
-│   ├── ai/
-│   └── utils/
-│
-├── frontend/
-│   ├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-│
-├── extension/
-│   ├── manifest.json
-│   ├── popup.js
-│   └── content.js
+│   ├── models/
+│   └── database/
+├── extension/       # Browser extension
+├── screenshots/     # Project screenshots
+└── README.md
 ```
 
 ---
 
-## 🚀 How to Run Locally
+## ⚙️ How It Works
 
-### 1️⃣ Backend
+1. **Input**
+   User submits URL, text, image, or video
+
+2. **Processing**
+   AI engine analyzes patterns, keywords, and metadata
+
+3. **Scoring**
+   Risk score is calculated using multiple signals
+
+4. **Result**
+   Output includes:
+
+   * Risk Level
+   * Confidence Score
+   * Explanation ("Why flagged")
+
+5. **Storage & Analytics**
+   Data stored and visualized in dashboard
+
+---
+
+## 🧪 Demo Scenarios
+
+Try these:
+
+* **OTP Scam**
+  `Send your OTP to verify your account`
+
+* **Phishing URL**
+  `http://secure-bank-update.xyz`
+
+* **Lottery Scam**
+  `Congratulations! You won ₹50,000`
+
+---
+
+## 📸 Screenshots
+
+### 🔹 Landing Page
+
+![Landing](screenshots/landing.png)
+
+### 🔹 Scan Studio
+
+![Scan](screenshots/scan.png)
+
+### 🔹 Detection Result
+
+![Result](screenshots/result.png)
+
+### 🔹 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### 🔹 Analytics
+
+![Analytics](screenshots/analytics.png)
+
+### 🔹 Detections
+
+![Detections](screenshots/detections.png)
+
+### 🔹 API Docs
+
+![API](screenshots/api.png)
+
+---
+
+## 🚀 Local Setup
+
+### 1️⃣ Clone Repository
+
+```
+git clone https://github.com/KUMARI-SONALIUPADHYAY/veritas-x.git
+cd veritas-x
+```
+
+---
+
+### 2️⃣ Backend Setup
 
 ```
 cd backend
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn backend.main:app --reload
 ```
+
+👉 Runs at: http://127.0.0.1:8000
 
 ---
 
-### 2️⃣ Frontend
+### 3️⃣ Frontend Setup
 
 ```
 cd frontend
@@ -162,83 +188,48 @@ npm install
 npm run dev
 ```
 
----
-
-### 3️⃣ Extension
-
-* Open Chrome → Extensions
-* Enable Developer Mode
-* Load unpacked → select `/extension`
+👉 Runs at: http://localhost:5173
 
 ---
 
-## 📡 API Endpoints
+## 🔌 API Endpoints
 
-* `/analyze` → scan input
-* `/analytics` → dashboard data
-* `/detections` → recent scans
-
----
-
-## 🔥 Unique Selling Points
-
-* AI + Real-time analytics combined
-* Multi-input detection (URL, text, media)
-* Browser extension integration
-* Exportable reports (PDF + JSON)
-* Live updating dashboard
+* `POST /api/analyze` → Analyze text/URL
+* `POST /api/analyze-image` → Image detection
+* `POST /api/analyze-video` → Video analysis
+* `GET /api/stats` → Dashboard stats
+* `GET /api/recent` → Recent detections
+* `GET /api/analytics` → Analytics data
 
 ---
 
-## 📊 Sample Insights
+## ⚠️ Deployment Note
 
-* Detects OTP scam patterns
-* Identifies phishing URLs
-* Highlights suspicious domains
-* Provides confidence score
+* Frontend is deployed on Vercel
+* Backend runs locally (AI + system dependencies)
+* Full system works when both are running locally
+
+---
+
+## 🚀 Future Improvements
+
+* Cloud deployment of AI backend
+* Advanced ML model integration
+* Real-time browser extension alerts
+* Multi-language scam detection
+* User authentication & profiles
 
 ---
 
 ## 👩‍💻 Author
 
-**Kumari Sonali**
+**Kumari Sonali Upadhyay**
+CSE Student | AI & Security Enthusiast
 
 ---
 
-## 🏁 Future Scope
+## 🏁 Final Note
 
-* Real-time WebSocket streaming
-* Mobile app integration
-* Advanced ML models
-* Global threat intelligence network
-
----
-## 📸 Screenshots
-
-### 🏠 Landing Page
-![Landing](./screenshots/landing.png)
-
-### 🔍 Scan Studio
-![Scan](./screenshots/scan.png)
-
-### 🚨 Scam Detection
-![Result](./screenshots/result.png)
-
-### 📊 Dashboard
-![Dashboard](./screenshots/dashboard.png)
-
-### 📁 Detections
-![Detections](./screenshots/detections.png)
-
-### 📈 Analytics
-![Analytics](./screenshots/analytics.png)
-
-### ⚙️ Backend API
-![API](./screenshots/api.png)
-
-## 💡 Conclusion
-
-VERITAS-X is not just a tool —
-it is a **complete AI-driven cybersecurity intelligence system** designed for modern digital threats.
+VERITAS X demonstrates how AI can be used to combat real-world digital fraud using intelligent, explainable, and scalable systems.
 
 ---
