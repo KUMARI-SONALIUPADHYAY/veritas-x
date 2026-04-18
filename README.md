@@ -213,6 +213,28 @@ npm run dev
 * Global threat intelligence network
 
 ---
+## 📸 Screenshots
+
+### 🏠 Landing Page
+![Landing](./screenshots/landing.png)
+
+### 🔍 Scan Studio
+![Scan](./screenshots/scan.png)
+
+### 🚨 Scam Detection
+![Result](./screenshots/result.png)
+
+### 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### 📁 Detections
+![Detections](./screenshots/detections.png)
+
+### 📈 Analytics
+![Analytics](./screenshots/analytics.png)
+
+### ⚙️ Backend API
+![API](./screenshots/api.png)
 
 ## 💡 Conclusion
 
